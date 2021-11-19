@@ -1,0 +1,15 @@
+git+git://github.com/DualMoonBird/pytorch_etw.git@v1.1.1#egg=etw_pytorch_utils
+h5py
+numpy
+torchvision
+pprint
+enum34
+future
+pandas
+shapely
+matplotlib
+pomegrante
+ipykernel
+imageio
+pyquaternion
+Python >= 3.7
