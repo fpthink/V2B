@@ -39,6 +39,8 @@ import json
 import os
 from typing import List, Dict, Any
 
+import matplotlib
+matplotlib.use("Agg")
 # import fire
 import matplotlib.pyplot as plt
 import numpy as np
