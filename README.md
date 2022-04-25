@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is released for V2B in our [NeurIPS 2021 paper (poster)](). Here we include our V2B model (PyTorch) and code for data preparation, training and testing on KITTI tracking dataset.
+This repository is released for V2B in our [NeurIPS 2021 paper (poster)](https://arxiv.org/pdf/2111.04426.pdf). Here we include our V2B model (PyTorch) and code for data preparation, training and testing on KITTI tracking dataset.
 We also provide the conversion code for the nuScenes data set, which is modified on the basis of the official code from nuScenes to KITTI.
 
 ## Preliminary

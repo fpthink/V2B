@@ -11,7 +11,7 @@ import etw_pytorch_utils as pt_utils
 from lib.pointops.functions import pointops
 from collections import namedtuple
 import torch.nn.functional as F
-from pointnet2.utils.pointnet2_modules import PointNet2SAModule, PointNet2FPModule, PointnetProposalModule
+from pointnet2.utils.pointnet2_modules import PointNet2SAModule, PointNet2FPModule
 from voxel.voxelnet import Conv_Middle_layers
 from voxel.region_proposal_network import RPN
 from modules.voxelization import Voxelization
