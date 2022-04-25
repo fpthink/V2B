@@ -24,12 +24,17 @@ We also provide the conversion code for the nuScenes data set, which is modified
 * Download the dataset from [KITTI Tracking](http://www.cvlibs.net/datasets/kitti/eval_tracking.php)
 
 	Download [velodyne](http://www.cvlibs.net/download.php?file=data_tracking_velodyne.zip), [calib](http://www.cvlibs.net/download.php?file=data_tracking_calib.zip) and [label_02](http://www.cvlibs.net/download.php?file=data_tracking_label_2.zip) in the dataset and place them under the same parent folder.
-* Download the dataset from [nuScenes](https://www.nuscenes.org/) and 
-execute the following code to convert nuScenes format to KITTI format
+* Download the Full dataset (v1.0) from [nuScenes](https://www.nuscenes.org/).
+  
+    Note that base on the offical code [nuscenes-devkit](https://github.com/nutonomy/nuscenes-devkit), we modify and use it to convert nuScenes format to KITTI format. It requires metadata from nuScenes-lidarseg. Thus, you should replace *category.json* and *lidarseg.json* in the Full dataset (v1.0). We provide these two json files in the nuscenes_json folder.
+
+    Executing the following code to convert nuScenes format to KITTI format
     ```
     cd nuscenes-devkit-master/python-sdk/nuscenes/scripts
     python export_kitti.py --nusc_dir=<nuScenes dataset path> --nusc_kitti_dir=<output dir> --split=<dataset split>
     ```
+
+    Note that the parameter of "split" should be "train_track" or "val". In our paper, we use the model trained on the KITTI dataset to evaluate the generalization of the model on the nuScenes dataset.
 	
 
 ## Evaluation
@@ -45,6 +50,26 @@ python test_tracking.py --which_dataset=<dataset type> --data_dir=<data path> --
 ```
 
 Please refer to the code for setting of other optional arguments, including data split, training and testing parameters, etc.
+
+## ToDO
+
+```
+- Provide pretrained models and visualization codes
+- Results on the Waymo dataset.
+```
+
+## Citation
+
+If you find the code or trained models useful, please consider citing:
+
+```
+@inproceedings{hui2021v2b,
+  title={3D Siamese Voxel-to-BEV Tracker for Sparse Point Clouds},
+  author={Hui, Le and Wang, Lingpeng and Cheng, Mingmei and Xie, Jin and Yang, Jian},
+  booktitle={NeurIPS},
+  year={2021}
+}
+```
 
 ## Acknowledgements
 
