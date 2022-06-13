@@ -1,6 +1,6 @@
 # 3D Siamese Voxel-to-BEV Tracker for Sparse Point Clouds
 
-Note that we create a new branch named "**master**" and set it as the default branch. The original default branch "**main**" is also retained, but is not updated.
+Note that we create a new branch named "**master**" and set it as the default branch. We have reorganized our code and the new branch will continue to be updated. The original default branch "**main**" is also retained, but is not updated.
 
 ## Introduction
 
