@@ -1,5 +1,7 @@
 # 3D Siamese Voxel-to-BEV Tracker for Sparse Point Clouds
 
+Note that we create a new branch named "**master**" and set it as the default branch. The original default branch "**main**" is also retained, but is not updated.
+
 ## Introduction
 
 This repository is released for V2B in our [NeurIPS 2021 paper (poster)](https://arxiv.org/pdf/2111.04426.pdf). 
@@ -86,16 +88,13 @@ python main.py --which_dataset KITTI/NUSCENES/WAYMO --category_name category_nam
 ```
 For more preset parameters or command debugging parameters, please refer to the relevant code and change it according to your needs.
 
-**Recommendations**: 
-- We have provided some pre-trained models under ```V2B_main/results``` folder, you can use and test them directly.  
-- Since both kitti and waymo are datasets constructed from 64-line LiDAR, nuScenes is a 32-line LiDAR. We recommend you: train your model on KITTI and verify the generalization ability of your model on waymo. Train on nuScenes or simply skip this dataset. We do not recommend that you verify the generalization ability of your model on nuScenes. 
-
-## Todo
-
+## Visualization
 ```
-1. Provide visualization codes.
-2. Provide test results on waymo open dataset so that you can use the results directly in your paper.
+cd V2B_main/visualization/
+python visual.py
 ```
+Note that for convenience, we provide the [trained_model_kitti_car.pth](https://drive.google.com/file/d/1VkaRqojeAZbNiZjpRuJ6yLw3UweFvBlj/view?usp=sharing). It can be directly downloaded and placed in the path "V2B_main/visualization/data" to show visualization results.
+
 
 ## Citation
 
