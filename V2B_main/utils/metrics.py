@@ -53,12 +53,17 @@ def estimateOverlap(box_a, box_b, dim=2, dataset_type='kitti'):
         return box_inter.area / box_union.area
 
     else:
-
-        ymax = min(box_a.center[1], box_b.center[1])
-        ymin = max(box_a.center[1] - box_a.wlh[2],
-                   box_b.center[1] - box_b.wlh[2])
-
-        inter_vol = box_inter.area * max(0, ymax - ymin)
+        if dataset_type.upper() == 'WAYMO':
+            zmax = min(box_a.center[2], box_b.center[2])
+            zmin = max(box_a.center[2] - box_a.wlh[2],
+                    box_b.center[2] - box_b.wlh[2])
+            inter_vol = box_inter.area * max(0, zmax - zmin)
+        else:
+            ymax = min(box_a.center[1], box_b.center[1])
+            ymin = max(box_a.center[1] - box_a.wlh[2],
+                    box_b.center[1] - box_b.wlh[2])
+            inter_vol = box_inter.area * max(0, ymax - ymin)
+        
         anno_vol = box_a.wlh[0] * box_a.wlh[1] * box_a.wlh[2]
         subm_vol = box_b.wlh[0] * box_b.wlh[1] * box_b.wlh[2]
 
